@@ -1,5 +1,5 @@
+<<<<<<< HEAD
 # USII interpretability research
-
 Develops a structural interpretability metric for tree-based models (the **Unified Structural
 Interpretability Index, USII**), applies it *within* three model classes (decision tree, random
 forest, gradient-boosted trees) across five datasets, and investigates a **threshold of
@@ -78,3 +78,12 @@ dimensionality.
 * The budget B and the accuracy tolerance are choices, not facts; conclusions should be read as a function of them.
 * Standard errors come from repeated CV folds, which are not independent, so they are optimistic; the fixed-tolerance rules are provided for that reason.
 * Feature use counts encoded columns; USII ignores feature semantics and user expertise.
+
+
+## AI statement
+
+ I created this repository with Claude Code (Claude Opus 5.5). After clarifying the scope
+with it, it generated the code, tests and README based on my own projects as style references. I
+reviewed and edited the result and checked that it runs. I take full responsibility for and
+ownership of the content of this repository.
+
