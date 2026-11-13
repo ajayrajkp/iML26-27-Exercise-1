@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # USII interpretability research
 Develops a structural interpretability metric for tree-based models (the **Unified Structural
 Interpretability Index, USII**), applies it *within* three model classes (decision tree, random
