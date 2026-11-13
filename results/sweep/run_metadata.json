@@ -1,0 +1,29 @@
+{
+  "seed": 42,
+  "cv": "RepeatedStratifiedKFold(n_splits=5, n_repeats=5)",
+  "datasets": [
+    "iris",
+    "wine",
+    "breast_cancer",
+    "synthetic_8f",
+    "synthetic_40f"
+  ],
+  "n_configs_per_dataset": 64,
+  "reference_rows_per_fold": 128,
+  "gb_learning_rate": 0.3,
+  "weights": {
+    "DPC": 0.3,
+    "BC": 0.3,
+    "FD": 0.2,
+    "EC": 0.2
+  },
+  "max_depth": 8,
+  "max_trees": 300,
+  "primary_budget": 9,
+  "primary_accuracy_rule": "1se",
+  "python": "3.12.3",
+  "numpy": "2.5.4",
+  "pandas": "3.0.6",
+  "scikit_learn": "1.9.1",
+  "scipy": "1.18.1"
+}
