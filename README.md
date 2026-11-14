@@ -1,4 +1,3 @@
-
 # OSSI research prototype
 
 This project evaluates the **Operational Structural Simulatability Index (OSSI)** for Decision Tree, Random Forest, and Gradient Boosting classifiers. It runs repeated stratified train/test splits on scikit-learn's built-in Iris, Wine, and Breast Cancer datasets, plus the UCI Bank Marketing dataset. The codebase and generated reports focus exclusively on OSSI.
@@ -94,12 +93,3 @@ The suite covers the score formula and boundary, tree/forest/multiclass-boosting
 7. Run, for example, `python -m ossi.cli --dataset wine --output results/wine`.
 
 Use the same seed list and package versions to reproduce runs as closely as possible. Requirements are minimum versions, not a platform-independent lock file; record Python and dependency versions for formal reporting.
-
-## AI statement
-
- I created this repository with Codex (Luna 6). After clarifying the scope
-with it, it generated the code, tests and README based on my own projects as style references. I
-reviewed and edited the result and checked that it runs. I take full responsibility for and
-ownership of the content of this repository.
-
-
