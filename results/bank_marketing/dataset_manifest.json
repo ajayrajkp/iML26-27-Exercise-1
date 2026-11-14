@@ -1,0 +1,22 @@
+{
+  "dataset": "bank_marketing",
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "reference_rows_per_seed": 128,
+  "target": "y",
+  "categorical_features_grouped_for_ossi": true,
+  "source": "UCI Machine Learning Repository, Bank Marketing (bank-full.csv)",
+  "source_url": "https://archive.ics.uci.edu/dataset/222/bank",
+  "citation": "Moro, Rita, and Cortez (2014), DOI: 10.24432/C5K306",
+  "license": "CC BY 4.0; attribution required",
+  "file_sha256": "d1513ec63b385506f7cfce9f2c5caa9fe99e7ba4e8c3fa264b3aaf0f849ed32d",
+  "excluded_features": [
+    "duration"
+  ],
+  "exclusion_reason": "Duration is only known after the last call and can leak post-outcome information into prediction."
+}
