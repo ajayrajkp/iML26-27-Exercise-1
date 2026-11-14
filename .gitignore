@@ -1,1 +1,30 @@
+<<<<<<< HEAD
 .venv/
+=======
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Environments
+.venv/
+
+# Tooling caches
+.pytest_cache/
+.ruff_cache/
+
+# OS / editors
+.DS_Store
+.vscode/
+.idea/
+
+# OpenML dataset cache
+data/*
+!data/.gitkeep
+
+# Experiment results (scripts/run_experiment.py)
+results/*
+!results/.gitkeep
+>>>>>>> 8b81843405cbeade07934d3f0a88ec771d630c8a
