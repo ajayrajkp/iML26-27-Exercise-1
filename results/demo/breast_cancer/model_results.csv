@@ -1,4 +1,0 @@
-dataset,model_family,accuracy,simulatability_index,passes_threshold,prediction_steps,total_rules,used_features,step_load,rule_load,feature_load,largest_load,number_of_trees,average_path_length
-breast_cancer,Decision Tree,0.9440559440559441,62.5,True,2.9921875,6,6,0.19947916666666668,0.2,0.6,0.6,1,2.9921875
-breast_cancer,Random Forest,0.958041958041958,21.73913043478261,False,37.4765625,108,29,2.4984375,3.6,2.9,3.6,10,3.74765625
-breast_cancer,Gradient Boosting,0.9440559440559441,42.85714285714286,False,20.0,30,10,1.3333333333333333,1.0,1.0,1.3333333333333333,10,2.0

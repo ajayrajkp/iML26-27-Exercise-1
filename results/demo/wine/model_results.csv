@@ -1,4 +1,0 @@
-dataset,model_family,accuracy,simulatability_index,passes_threshold,prediction_steps,total_rules,used_features,step_load,rule_load,feature_load,largest_load,number_of_trees,average_path_length
-wine,Decision Tree,0.9555555555555556,62.5,True,3.0,6,6,0.2,0.2,0.6,0.6,1,3.0
-wine,Random Forest,1.0,26.548672566371682,False,34.02222222222222,83,13,2.268148148148148,2.7666666666666666,1.3,2.7666666666666666,10,3.402222222222222
-wine,Gradient Boosting,0.9111111111111111,20.0,False,60.0,90,9,4.0,3.0,0.9,4.0,30,2.0
