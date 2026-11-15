@@ -1,6 +1,6 @@
 # Simulatability Index
 
-This project measures the structural interpretability of Decision Trees, Random Forests, and Gradient-Boosted Trees.
+This repository was created as part of Interpretable Machine Learning Exercise 1. Through this task we measure the structural interpretability of Decision Trees, Random Forests, and Gradient-Boosted Trees.
 
 ## Metric
 
@@ -127,6 +127,10 @@ All generated files are saved directly in `results/`.
 ## Limitation
 
 The metric measures model structure. Human testing would be needed to confirm the workload limits for a specific audience.
+
+## Conclusion
+
+Our project defines interpretability as structural simulatability, meaning the amount of work required to inspect a model and reproduce a prediction. We measure three workloads: prediction steps, total rules, and used features. Each workload is divided by a declared limit, and we use the largest normalized workload so that one complex component cannot be hidden by simpler components. The final Simulatability Index is 100 divided by one plus the largest load. A score of 50 is the exact threshold because it means the largest workload has reached its limit. We tested 42 settings across Decision Trees, Random Forests, and Gradient-Boosted Trees on four datasets using three random splits. This produced 504 fitted model runs per protocol. Under the moderate protocol, 197 passed. The results show that compact trees and small ensembles can maintain high accuracy, while larger ensembles often exceed the structural workload limits. We also tested 27 alternative limit combinations to show how the conclusions depend on the selected inspection protocol.
 
 ## AI statement
 
