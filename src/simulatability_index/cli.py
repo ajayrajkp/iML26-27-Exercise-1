@@ -3,22 +3,14 @@
 import argparse
 import json
 
-from .experiment import run_demo, run_sweep
+from .experiment import run_experiment
 
 
 def main():
     parser = argparse.ArgumentParser(description="Simulatability Index experiments")
-    commands = parser.add_subparsers(dest="command", required=True)
-    sweep = commands.add_parser("sweep", help="run the complete benchmark")
-    sweep.add_argument("--output", default="results/sweep")
-    demo = commands.add_parser("demo", help="run three example models on each dataset")
-    demo.add_argument("--output", default="results/demo")
+    parser.add_argument("--output", default="results")
     arguments = parser.parse_args()
-
-    if arguments.command == "sweep":
-        print(json.dumps(run_sweep(arguments.output), indent=2))
-    else:
-        print(run_demo(arguments.output).to_string(index=False))
+    print(json.dumps(run_experiment(arguments.output), indent=2))
 
 
 if __name__ == "__main__":

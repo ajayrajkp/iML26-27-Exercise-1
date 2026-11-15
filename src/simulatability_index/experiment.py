@@ -115,8 +115,8 @@ def create_sensitivity_results(results):
     return pd.DataFrame(rows)
 
 
-def run_sweep(output="results/sweep"):
-    """Run both protocols and save the complete study outputs."""
+def run_experiment(output="results"):
+    """Run both protocols and save all experiment outputs."""
     output_folder = Path(output)
     output_folder.mkdir(parents=True, exist_ok=True)
     moderate_results = run_models(MODERATE_LIMITS)
@@ -147,32 +147,4 @@ def run_sweep(output="results/sweep"):
         json.dump(summary, file, indent=2)
     create_plots(moderate_results, output_folder / "figures")
     return summary
-
-
-def run_demo(output="results/demo"):
-    """Run one small example for each dataset."""
-    output_folder = Path(output)
-    rows = []
-    for dataset_name, load_data in DATASETS.items():
-        dataset = load_data()
-        train_x, test_x, train_y, test_y = train_test_split(
-            dataset.data, dataset.target, test_size=0.25, stratify=dataset.target, random_state=42
-        )
-        reference_data = test_x[:min(128, len(test_x))]
-        models = [
-            ("Decision Tree", DecisionTreeClassifier(max_depth=3, random_state=42)),
-            ("Random Forest", RandomForestClassifier(n_estimators=10, max_depth=4, random_state=42)),
-            ("Gradient Boosting", GradientBoostingClassifier(n_estimators=10, max_depth=2, random_state=42)),
-        ]
-        dataset_rows = []
-        for family, model in models:
-            model.fit(train_x, train_y)
-            row = {"dataset": dataset_name, "model_family": family, "accuracy": model.score(test_x, test_y)}
-            row.update(calculate_index(model, reference_data, MODERATE_LIMITS))
-            rows.append(row)
-            dataset_rows.append(row)
-        dataset_folder = output_folder / dataset_name
-        dataset_folder.mkdir(parents=True, exist_ok=True)
-        pd.DataFrame(dataset_rows).to_csv(dataset_folder / "model_results.csv", index=False)
-    return pd.DataFrame(rows)
 

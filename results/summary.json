@@ -1,0 +1,35 @@
+{
+  "metric": "Simulatability Index",
+  "formula": "100 / (1 + max(prediction_steps/step_limit, total_rules/rule_limit, used_features/feature_limit))",
+  "threshold": 50.0,
+  "moderate_limits": {
+    "steps": 15.0,
+    "rules": 30.0,
+    "features": 10
+  },
+  "lenient_limits": {
+    "steps": 30.0,
+    "rules": 100.0,
+    "features": 10
+  },
+  "number_of_models": 504,
+  "moderate_models_passing": 197,
+  "lenient_models_passing": 255,
+  "datasets": [
+    "banknote_authentication_uci",
+    "breast_cancer",
+    "iris",
+    "wine"
+  ],
+  "model_families": [
+    "Decision Tree",
+    "Gradient Boosting",
+    "Random Forest"
+  ],
+  "seeds": [
+    13,
+    42,
+    97
+  ],
+  "scope": "Structural proxy based on declared workload limits; not a universal human threshold"
+}

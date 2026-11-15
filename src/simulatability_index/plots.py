@@ -4,11 +4,10 @@ import matplotlib
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-import numpy as np
 
 
 def create_plots(results, output_folder):
-    """Create the accuracy plot and index distribution plot."""
+    """Create the accuracy and Simulatability Index plot."""
     output_folder.mkdir(parents=True, exist_ok=True)
     colors = {
         "Decision Tree": "#4778a8",
@@ -40,21 +39,5 @@ def create_plots(results, output_folder):
     figure.suptitle("Accuracy and Simulatability Index under the moderate limits")
     figure.tight_layout()
     figure.savefig(output_folder / "accuracy_vs_simulatability.png", dpi=170)
-    plt.close(figure)
-
-    figure, axis = plt.subplots(figsize=(9, 5))
-    failed = results[~results["passes_threshold"]]
-    passed = results[results["passes_threshold"]]
-    bins = np.arange(0, 102, 2)
-    axis.hist(failed["simulatability_index"], bins=bins, alpha=0.58, label="Below 50")
-    axis.hist(passed["simulatability_index"], bins=bins, alpha=0.58, label="50 or higher")
-    axis.axvline(50.0, color="#b44", linestyle="--", linewidth=2, label="Threshold = 50")
-    axis.set_xlabel("Simulatability Index")
-    axis.set_ylabel("Model configurations")
-    axis.set_title("Distribution of the Simulatability Index")
-    axis.legend()
-    axis.grid(axis="y", alpha=0.2)
-    figure.tight_layout()
-    figure.savefig(output_folder / "index_distribution.png", dpi=170)
     plt.close(figure)
 

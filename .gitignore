@@ -17,10 +17,3 @@ dist/
 .vscode/
 .idea/
 
-# OpenML dataset cache
-
-!data/.gitkeep
-
-# Experiment results (scripts/run_experiment.py)
-results/*
-!results/.gitkeep

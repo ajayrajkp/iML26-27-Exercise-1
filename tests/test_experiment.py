@@ -1,5 +1,7 @@
+from inspect import signature
+
 from simulatability_index.datasets import DATASETS
-from simulatability_index.experiment import create_models
+from simulatability_index.experiment import create_models, run_experiment
 
 
 def test_experiment_size_and_model_families():
@@ -9,4 +11,5 @@ def test_experiment_size_and_model_families():
     assert len(DATASETS) == 4
     assert len(models) == 42
     assert families == {"Decision Tree", "Random Forest", "Gradient Boosting"}
+    assert signature(run_experiment).parameters["output"].default == "results"
 
